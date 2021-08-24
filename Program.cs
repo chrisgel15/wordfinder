@@ -4,9 +4,9 @@ using System.Linq;
 
 public class Program
 {
-	private static Random random = new Random();
+    private static Random random = new Random();
     private static int CHARS_OF_THE_MATRIX = 4096;
-	public static void Main()
+    public static void Main()
     {
         // Instanciate random input matrix and words to find
         string[] matrix = CreateRandomInputMatrix();
@@ -15,14 +15,16 @@ public class Program
         // Main logic
         WordFinder finder = new WordFinder(matrix);
         IEnumerable<string> result = finder.Find(stream);
-        
+
         PrintResult(result);
         Console.ReadLine();
     }
-	private static string[] WordsToFind()
+
+    private static string[] WordsToFind()
     {
         return new string[15] { "CHO", "OSE", "THE", "WOR", "DS", "YOU", "WAN", "T", "TO", "FIND", "FOR", "TESTING", "PUR", "POSES", "THANKS" };
-	}
+    }
+
     private static string[] CreateRandomInputMatrix()
     {
         string[] randomMatrix = new string[CHARS_OF_THE_MATRIX];
@@ -33,6 +35,7 @@ public class Program
 
         return randomMatrix;
     }
+
     private static void PrintResult(IEnumerable<string> result)
     {
         foreach (string s in result)
@@ -41,11 +44,11 @@ public class Program
         }
     }
     public static string RandomString(int length)
-	{
-		const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		return new string(Enumerable.Repeat(chars, length)
-		  .Select(s => s[random.Next(s.Length)]).ToArray());
-	}
+    {
+        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        return new string(Enumerable.Repeat(chars, length)
+          .Select(s => s[random.Next(s.Length)]).ToArray());
+    }
 }
 
 
