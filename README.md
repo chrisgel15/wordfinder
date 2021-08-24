@@ -23,7 +23,8 @@ In this way, the logic is quite simple:
 # Additional Notes
 I removed code comments so the code is cleaner to read, I don't like commenting code anyways (prefer cleaner code + documentation).
 I did not add unit test but they are simple as well, as the code is decoupled and some logic is trivial due to its design.
-Performance optimizations could come into:
+
+Additional performance optimizations could come into:
 - Designing a different data model or operating in a more complex algorithm directly into the IEnumerable collection.
 - Avoid using "foreach" statement, change to "for" whenever possible.
 - Removing the LINQ queries would improve performance when selecting hundreds or thousands of words.
